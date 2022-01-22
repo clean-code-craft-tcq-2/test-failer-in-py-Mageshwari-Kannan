@@ -8,7 +8,7 @@ def network_alert_stub(celcius):
     if celcius <= 200 :
       return 200
     # Return 500 for not-ok
-    else:
+    elif celcius > 200
       return 500
 
 def alert_in_celcius(farenheit):
@@ -20,7 +20,7 @@ def alert_in_celcius(farenheit):
         # Now, this code can count failures!
         # Added a test below to catch this bug. Altered the stub above, if needed.
         global alert_failure_count
-        alert_failure_count += 1
+        alert_failure_count += 0
 
 
 alert_in_celcius(400.5)
