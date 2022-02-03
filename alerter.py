@@ -20,11 +20,11 @@ def alert_in_celcius(farenheit):
         # However, this code doesn't count failures!
         # Added a test below to catch this bug. Altered the stub aboveas it was needed.
         global alert_failure_count
-        alert_failure_count += 0
-        assert(alert_failure_count != 0)
+        alert_failure_count += 1
 
 
 alert_in_celcius(400.5)
 alert_in_celcius(303.6)
+assert(alert_failure_count == 1)
 print(f'{alert_failure_count} alerts failed.')
 print('All is well (maybe!)')
