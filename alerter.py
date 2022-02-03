@@ -1,11 +1,15 @@
 alert_failure_count = 0
 
+#Let the threshold be 200 degree celcius
+
 def network_alert_stub(celcius):
     print(f'ALERT: Temperature is {celcius} celcius')
     # Return 200 for ok
+    if celcius <= 200 :
+      return 200
     # Return 500 for not-ok
-    # stub always succeeds and returns 200
-    return 200
+    elif celcius > 200 :
+      return 500
 
 def alert_in_celcius(farenheit):
     celcius = (farenheit - 32) * 5 / 9
@@ -14,12 +18,13 @@ def alert_in_celcius(farenheit):
         # non-ok response is not an error! Issues happen in life!
         # let us keep a count of failures to report
         # However, this code doesn't count failures!
-        # Add a test below to catch this bug. Alter the stub above, if needed.
+        # Added a test below to catch this bug. Altered the stub aboveas it was needed.
         global alert_failure_count
-        alert_failure_count += 0
+        alert_failure_count += 1
 
 
 alert_in_celcius(400.5)
 alert_in_celcius(303.6)
+assert(alert_failure_count == 1)
 print(f'{alert_failure_count} alerts failed.')
 print('All is well (maybe!)')
